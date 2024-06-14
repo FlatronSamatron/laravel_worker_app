@@ -9,7 +9,14 @@
 
 # Install migration:
     php artisan migrate
+# Delete data from migration tables:
+    php artisan migrate:fresh
+
 
 # Create request:
     php artisan make:request Worker/StoreRequest
+
+# Create command:
+    php artisan make::command DevCommand
+
 

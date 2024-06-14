@@ -12,4 +12,18 @@ class Worker extends Model
     protected $table = 'workers';
     protected $guarded = false;
 
+    public function profile()
+    {
+        return $this->hasOne(Profile::class, 'worker_id', 'id');
+    }
+
+    public function position()
+    {
+        return $this->belongsTo(Position::class, 'position_id', 'id');
+    }
+
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class, 'project_workers', 'project_id', 'worker_id');
+    }
 }
